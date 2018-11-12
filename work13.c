@@ -15,14 +15,8 @@ static void sighandler (int signo) {
 		time_t rawtime;
 		time(&rawtime);
 		struct tm *time_info = localtime(&rawtime);
-		char time[22];
-		time[0] = "\n";
-		char *x = asctime(time_info);
-		for(int i=1; i < 22; i++) {
-			time[i] = x[i+3];
-		}
-		time[22] = "\n";
-		printf("X: %s\n", x );
+		char time[25];
+		time = asctime(time_info);
 		printf("Time: %s\n", time );
 
 		char note[29] = "Program exited due to SIGINT\n";
