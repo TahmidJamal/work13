@@ -18,13 +18,16 @@ static void sighandler (int signo) {
 		char time[128];
 		strcat(time, "\n");
 		strncat(time, asctime(time_info)+4,31);
+		printf("Time: %s\n", time );
 
 		char note[] = "Program exited due to SIGINT\n";
+		printf("Note: %s\n", note );
 		
 		char message[52];
 		strcat(message, time+1);
 		strcat(message, note);
 		strcat(message, "\n\n");
+		printf("message: %s\n", message );
 
 		int fd = open("sighandles.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
 		if (write(fd, message, sizeof(message)) == -1) {
