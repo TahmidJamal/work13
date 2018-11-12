@@ -17,16 +17,16 @@ static void sighandler (int signo) {
 		struct tm *time_info = localtime(&rawtime);
 		char *time = asctime(time_info);
 		time = asctime(time_info);
-		printf("Time: %s\n", time );
+		// printf("Time: %s\n", time );
 
 		char note[29] = "Program exited due to SIGINT\n";
-		printf("Note: %s\n", note );
+		// printf("Note: %s\n", note );
 		
 		char message[55];
 		strcpy(message, time);
 		strcat(message, note);
 		strcat(message, "\n\n");
-		printf("message: %s\n", message );
+		// printf("message: %s\n", message );
 
 		int fd = open("sighandles.txt", O_CREAT | O_WRONLY | O_APPEND, 0644);
 		if (write(fd, message, sizeof(message)) == -1) {
