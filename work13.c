@@ -15,7 +15,7 @@ static void sighandler (int signo) {
 		time_t rawtime;
 		time(&rawtime);
 		struct tm *time_info = localtime(&rawtime);
-		char time[25];
+		char *time = asctime(time_info);
 		time = asctime(time_info);
 		printf("Time: %s\n", time );
 
