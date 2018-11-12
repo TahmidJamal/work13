@@ -23,7 +23,7 @@ static void sighandler (int signo) {
 		printf("Note: %s\n", note );
 		
 		char message[52];
-		strcat(message, time);
+		strcpy(message, time);
 		strcat(message, note);
 		strcat(message, "\n\n");
 		printf("message: %s\n", message );
