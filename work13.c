@@ -22,7 +22,7 @@ static void sighandler (int signo) {
 		char note[29] = "Program exited due to SIGINT\n";
 		printf("Note: %s\n", note );
 		
-		char message[53];
+		char message[54];
 		strcpy(message, time);
 		strcat(message, note);
 		strcat(message, "\n\n");
