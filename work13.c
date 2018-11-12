@@ -17,7 +17,7 @@ static void sighandler (int signo) {
 		struct tm *time_info = localtime(&rawtime);
 		char time[22];
 		time[0] = "\n";
-		char x[] = asctime(time_info);
+		char *x = asctime(time_info);
 		for(int i=1; i < 22; i++) {
 			time[i] = x[i+3];
 		}
