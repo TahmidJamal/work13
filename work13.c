@@ -22,6 +22,7 @@ static void sighandler (int signo) {
 			time[i] = x[i+3];
 		}
 		time[22] = "\n";
+		printf("X: %s\n", x );
 		printf("Time: %s\n", time );
 
 		char note[29] = "Program exited due to SIGINT\n";
